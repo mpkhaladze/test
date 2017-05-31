@@ -4,22 +4,22 @@
       <a class="navbar-brand float-left" href="/">Barcode</a>
       <ul class="nav nav-pills float-right">
         <li  class="nav-item">
-            <a class="nav-link">Home</a>
+            <a href="#home" class="nav-link">Home</a>
         </li>
         <li  class="nav-item"  >
-            <a class="nav-link">Dashboard</a>
+            <a href="#dashboard" class="nav-link">Dashboard</a>
         </li>
         <li  class="nav-item" >
             <a href="#about" class="nav-link">About</a>
         </li>
         <li  class="nav-item"  >
-            <a class="nav-link">Contact</a>
+            <a href="#register" class="nav-link">Register</a>
         </li>
         <li  class="nav-item" >
-            <a class="nav-link">Login</a>
+            <a href="#login" class="nav-link">Login</a>
         </li>
         <li  class="nav-item" >
-            <a class="nav-link">Logout</a>
+            <a href="#logout" class="nav-link">Logout</a>
         </li>
       </ul>
     </nav>
