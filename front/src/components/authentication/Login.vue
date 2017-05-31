@@ -7,11 +7,11 @@
               <img src="../../assets/user_circle.png" height="100" width="100" alt="">
             </div>
             <div class="form-box">
-                <form action="" method="">
+                <!-- <form action="" method="post"> -->
                     <input type="email" autocomplete="off" v-model='email' name="emails" placeholder="E-Mail">
                     <input type="password" autocomplete="off" v-model='password' name="password" placeholder="Password">
                     <button @click='login' class="btn btn-info btn-block login" type="submit">Login</button>
-                </form>
+                <!-- </form> -->
             </div>
         </div>
     </div>
@@ -28,10 +28,20 @@
     },
     methods:{
         login(){
-            this.$http.get('http://localhost:8000/api/user')
-                .then(function(response){
+            var data = {
+                client_id: 2, 
+                client_secret:'w7ly5JDqUGsbIpGsv7uIbl9pNEa4wQQvKJnSlenV',
+                grant_type: 'password',
+                username:this.email,
+                password:this.password
+            }
+            this.$http.post('http://localhost:8000/oauth/token', data)
+                .then(response => {
                     console.log(response)
-                })
+                })  
+/*                .then(function(response){
+                    console.log(response)
+                })*/
         }
     }
   }
