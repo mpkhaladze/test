@@ -22,7 +22,7 @@ export default function(Vue){
 			localStorage.removeItem('expiration')
 		},
 
-		isAuthentication () {
+		isAuthenticated () {
 			if(this.getToken())
 				return true
 			else

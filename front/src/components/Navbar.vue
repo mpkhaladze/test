@@ -10,7 +10,7 @@
             <a href="#dashboard" class="nav-link">Dashboard</a>
         </li>
         <li  class="nav-item" >
-            <a href="#about" class="nav-link">About</a>
+            <a href="#feed" class="nav-link">Feed</a>
         </li>
         <li  class="nav-item"  >
             <a href="#register" class="nav-link">Register</a>
