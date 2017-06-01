@@ -18,11 +18,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('user', function(){
-    return response()->json([
-        'user' => [
-                'first_name' => 'merabi',
-                'last_name'=> 'pkhaladze'
-            ]
-        ]);
+
+Route::group(['middleware' => 'auth:api'], function() {
+	Route::get('test', function(){
+	    return response()->json([
+	        'user' => [
+	                'first_name' => 'merabi',
+	                'last_name'=> 'pkhaladze'
+	            ]
+	        ]);
+	});
+
 });
+
+Route::resource('products', 'ProductsController');

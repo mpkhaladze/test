@@ -15,6 +15,7 @@ const router = new VueRouter({
                 forVisitors: true
             }
         },
+        
         {
             path: '/register',
             component: Register,
@@ -22,6 +23,7 @@ const router = new VueRouter({
                 forVisitors: true
             }
         },
+
         {
             path: '/feed',
             component: Feed,
