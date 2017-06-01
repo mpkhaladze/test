@@ -31,7 +31,9 @@ const router = new VueRouter({
                 forAuth: true
             }
         }
-    ]
+    ],
+
+    linkActiveClass: "active nav-item"
 })
 
 export default router

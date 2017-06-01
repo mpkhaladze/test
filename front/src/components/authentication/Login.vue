@@ -7,11 +7,11 @@
               <img src="../../assets/user_circle.png" height="100" width="100" alt="">
             </div>
             <div class="form-box">
-                <!-- <form action="" method="post"> -->
+                <!-- <form action="#/feed"> -->
                     <input type="email" autocomplete="off" v-model='email' name="emails" placeholder="E-Mail">
                     <input type="password" autocomplete="off" v-model='password' name="password" placeholder="Password">
                     <button @click='login' class="btn btn-info btn-block login" type="submit">Login</button>
-                <!-- </form> -->
+               <!--  </form> -->
             </div>
         </div>
     </div>
@@ -38,7 +38,8 @@
             this.$http.post('oauth/token', data)
                 .then(response => {
                     this.$auth.setToken(response.body.access_token, response.body.expires_in + Date.now())
-                })  
+                })
+                this.$router.push('feed')
 /*                .then(function(response){
                     console.log(response)
                 })*/

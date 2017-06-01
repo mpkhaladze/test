@@ -1,35 +1,47 @@
 <template>
+<div>
   <div class="header clearfix">
     <nav>
       <a class="navbar-brand float-left" href="/">Barcode</a>
-      <ul class="nav nav-pills float-right">
-        <li  class="nav-item">
-            <a href="#home" class="nav-link">Home</a>
-        </li>
-        <li  class="nav-item"  >
-            <a href="#dashboard" class="nav-link">Dashboard</a>
-        </li>
-        <li  class="nav-item" >
-            <a href="#feed" class="nav-link">Feed</a>
-        </li>
-        <li  class="nav-item"  >
-            <a href="#register" class="nav-link">Register</a>
-        </li>
-        <li  class="nav-item" >
-            <a href="#login" class="nav-link">Login</a>
-        </li>
-        <li  class="nav-item" >
-            <a href="#logout" class="nav-link">Logout</a>
-        </li>
+      <ul class="nav nav-pills pull-right">
+          <router-link tag='li' to='/feed' v-if=' isAuth'> 
+              <a class="nav-link"> Feed </a> 
+          </router-link>
+          <router-link tag='li' to='/login' v-if='! isAuth'> 
+              <a class="nav-link"> Login </a> 
+          </router-link>
+          <router-link tag='li' to='/register' v-if='! isAuth'> 
+              <a class="nav-link"> Register </a> 
+          </router-link>
+          <router-link tag='li' to='/logout' v-if=' isAuth'>
+              <a class="nav-link"> Logout </a>
+          </router-link>
       </ul>
     </nav>
   </div>
+  <hr>
+</div>
 </template>
 
+<script >
+  export default{
+    data(){
+      return {
+        isAuth: null
+      }
+    },
+
+    created (){
+      this.isAuth = this.$auth.isAuthenticated()
+    }
+  }
+</script>
+
+<style scope>
 
 
-<style scoped>
-h1, h2 {
+
+/*h1, h2 {
   font-weight: normal;
 }
 
@@ -47,13 +59,14 @@ li {
   color: #008B8B;
   font-size: 30px;
 }
-
+*/
 .router-link-active {
   cursor: default;
-  background-color: #0275d8;
+  background-color: blue;
+  color:white;
 }
-
+/*
 .router-link-active a{
   color: #fff;
-}
+}*/
 </style>
